@@ -14,7 +14,7 @@ public class QuickFindUFTest {
 
     @Test
     public void connectionWorksTest(){
-        QuickFindUF quickFindUF = new QuickFindUF();
+        QuickFindUF quickFindUF = new QuickFindUF(10);
         quickFindUF.union(4, 3);
         quickFindUF.union(3, 8);
         quickFindUF.union(6,5);
