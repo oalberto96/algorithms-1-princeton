@@ -1,6 +1,6 @@
 package main.week1;
 
-public class QuickFindUF {
+public class QuickFindUF implements FindUnionAlgorithm {
 
     private int[] id;
 
@@ -21,7 +21,7 @@ public class QuickFindUF {
         }
     }
 
-    public Boolean areConnected(int nodeP, int nodeQ){
+    public boolean areConnected(int nodeP, int nodeQ){
         return id[nodeP] == id[nodeQ];
     }
 

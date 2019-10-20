@@ -1,11 +1,13 @@
 package test.week1;
+
 import main.week1.FindUnionAlgorithm;
 import main.week1.QuickFindUF;
+import main.week1.QuickUnionUF;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class QuickFindUFTest {
+public class QuickUnionUfTest {
 
     /**
      * 0  1  2  3  4
@@ -15,7 +17,7 @@ public class QuickFindUFTest {
 
     @Test
     public void connectionWorksTest(){
-        FindUnionAlgorithm quickFindUF = new QuickFindUF(10);
+        FindUnionAlgorithm quickFindUF = new QuickUnionUF(10);
         quickFindUF.union(4, 3);
         quickFindUF.union(3, 8);
         quickFindUF.union(6,5);
@@ -39,5 +41,4 @@ public class QuickFindUFTest {
          */
         assertEquals(true, quickFindUF.areConnected(0, 7), "0 and 7 must be connected");
     }
-
 }
