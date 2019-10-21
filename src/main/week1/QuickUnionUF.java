@@ -2,20 +2,33 @@ package main.week1;
 
 public class QuickUnionUF implements FindUnionAlgorithm {
 
-    public QuickUnionUF(int n){
+    private int[] id;
 
+    public QuickUnionUF(int n){
+        id = new int[n];
+        for (int i = 0; i < n; i++) {
+            id[i] = i;
+        }
     }
 
-    private int root(int node){
-        return 1;
+    public int getRoot(int initialNode){
+        int node = initialNode;
+        while(node != id[node]){
+            node = id[node];
+        }
+        return node;
     }
 
     public boolean areConnected(int nodeP, int nodeQ){
-        return false;
+        return getRoot(nodeP) == getRoot(nodeQ);
     }
 
     public void union(int nodeP, int nodeQ){
-
+        int nodePRoot = getRoot(nodeP);
+        int nodeQRoot = getRoot(nodeQ);
+        if (nodePRoot != nodeQRoot){
+            id[nodePRoot] = nodeQRoot;
+        }
     }
 
 }
